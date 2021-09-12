@@ -64,5 +64,14 @@ COPY conf/fluent-bit.conf \
 #
 EXPOSE 2020
 
+#
+ENV USER=1001 \
+    USERGROUP=2001
+
+RUN groupadd -g ${USERGROUP} app && useradd -u ${USER} -g app -s /bin/sh app
+
+#
+USER ${USER}
+
 # Entry point
 CMD ["/fluent-bit/bin/fluent-bit", "-c", "/fluent-bit/etc/fluent-bit.conf"]
