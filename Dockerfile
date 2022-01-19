@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi8/ubi:8.4-211
+FROM registry.access.redhat.com/ubi8/ubi:8.5-214
 
 # Fluent Bit version
 ENV FLB_MAJOR 1
